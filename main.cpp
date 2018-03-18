@@ -4,6 +4,21 @@
 
 using namespace std;
 
+class cpu {
+    class cpu_thumb {
+        class reg {
+            // TODO
+        };
+    };
+    class cpu_norm {
+        class reg {
+            // TODO
+        };
+    };
+    bool thumb_state;
+};
+
+
 int game_title(char* title) {
     cout << title << endl;
 }
