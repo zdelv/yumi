@@ -21,5 +21,7 @@ void open_file(char* path){
 int main(int argc, char* argv[]) {
     game_title(argv[1]);
     open_file(argv[1]);
+
+    cout << "Hello World"
     return 0;
 }
