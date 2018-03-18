@@ -15,6 +15,7 @@ void open_file(char* path){
             fileData >> data[i];
             cout << data[i];
     }
+    fileData.close();
     cout << endl;
 }
 
