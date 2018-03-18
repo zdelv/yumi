@@ -4,7 +4,7 @@
 using namespace std;
 
 int game_title(char* title) {
-    cout << title;
+    cout << title << endl;
 }
 
 void open_file(char* path){
@@ -15,6 +15,7 @@ void open_file(char* path){
             fileData >> data[i];
             cout << data[i];
     }
+    cout << endl;
 }
 
 
@@ -22,6 +23,6 @@ int main(int argc, char* argv[]) {
     game_title(argv[1]);
     open_file(argv[1]);
 
-    cout << "Hello World"
+    cout << "Hello World" << endl;
     return 0;
 }
