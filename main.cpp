@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -8,20 +9,19 @@ int game_title(char* title) {
 }
 
 void open_file(char* path){
-    ifstream fileData;
-    fileData.open(path);
-    char data[100];
-    for (int i=0; i < 101; i++) {
-            fileData >> data[i];
-            cout << data[i];
+    ifstream file(path, ios::binary);
+    vector<char> file_buf((istreambuf_iterator<char>(file)),(std::istreambuf_iterator<char>()));
+    for (int i=0; i < 500; i++) {
+            cout << file_buf[i];
     }
-    fileData.close();
+    file.close();
     cout << endl;
 }
 
 
 int main(int argc, char* argv[]) {
     game_title(argv[1]);
+    vector<char> file_buf;
     open_file(argv[1]);
 
     cout << "Hello World" << endl;
