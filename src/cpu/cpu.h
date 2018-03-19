@@ -1,8 +1,4 @@
 #include <iostream>
-#include <fstream>
-#include <vector>
-
-using namespace std;
 
 /* 
 31 total registers, 32-bit.
@@ -26,29 +22,3 @@ struct cpu
     uint32_t cpsr;          //Current Program Status Register (Status Bits)
     uint32_t spsr_regs[5];  //Saved Program Status Register --  [0]FIQ,[1]Supervisor,[2]Abort,[3]IRQ,[4]Undefined
 };
-
-int game_title(char *title)
-{
-    cout << title << endl;
-}
-
-void open_file(char *path)
-{
-    ifstream file(path, ios::binary);
-    vector<char> file_buf((istreambuf_iterator<char>(file)), (std::istreambuf_iterator<char>()));
-    for (int i = 0; i < 500; i++)
-    {
-        cout << file_buf[i];
-    }
-    cout << endl;
-}
-
-int main(int argc, char *argv[])
-{
-    game_title(argv[1]);
-    vector<char> file_buf;
-    open_file(argv[1]);
-
-    cout << "Hello World" << endl;
-    return 0;
-}
