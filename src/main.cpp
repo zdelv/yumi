@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <bitset>
 #include "cpu/cpu.h"
 
 using namespace std;
@@ -27,7 +26,9 @@ int main(int argc, char *argv[])
     game_title(argv[1]);
     vector<char> file_buf;
     //open_file(argv[1]);
-
+    uint32_t test = 0x2F;
+    operation_mode mode = op_mode(test);
+    cout << mode << endl;
     cout << "Hello World" << endl;
     return 0;
 }

@@ -1,7 +1,4 @@
 #include <stdint.h>
-#include <iostream>
-
-using namespace std;
 
 uint32_t extract_last_bits(uint32_t bits, uint32_t extracted_bits, int num_of_bits)
 {
