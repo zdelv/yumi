@@ -27,8 +27,6 @@ int main(int argc, char *argv[])
     vector<char> file_buf;
     //open_file(argv[1]);
     uint32_t test = 0x2F;
-    operation_mode mode = op_mode(test);
-    cout << mode << endl;
     cout << "Hello World" << endl;
     return 0;
 }
