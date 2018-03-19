@@ -40,7 +40,6 @@ void open_file(char *path)
     {
         cout << file_buf[i];
     }
-    file.close();
     cout << endl;
 }
 
