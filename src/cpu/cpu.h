@@ -24,13 +24,7 @@ struct cpu
     uint32_t spsr_regs[5]; //Saved Program Status Register --  [0]FIQ,[1]Supervisor,[2]Abort,[3]IRQ,[4]Undefined
 };
 
-/*  Runs through the current operation mode on the CPSR
-    Input: CPSR 
-    Output: Nothing
- */
-void op_mode(uint32_t cpsr);
-
-enum operation_mode
+enum op_mode
 {
     user,
     fiq,
@@ -40,3 +34,10 @@ enum operation_mode
     und,
     sys
 };
+
+/*  Runs through the current operation mode on the CPSR
+    Input: CPSR 
+    Output: Nothing
+ */
+void current_operation_mode(uint32_t cpsr);
+
