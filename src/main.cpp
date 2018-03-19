@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <bitset>
 #include "cpu/cpu.h"
 
 using namespace std;
@@ -25,7 +26,7 @@ int main(int argc, char *argv[])
 {
     game_title(argv[1]);
     vector<char> file_buf;
-    open_file(argv[1]);
+    //open_file(argv[1]);
 
     cout << "Hello World" << endl;
     return 0;
