@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int game_title(char *title)
+void game_title(char *title)
 {
     cout << title << endl;
 }
