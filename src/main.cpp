@@ -29,10 +29,9 @@ int main(int argc, char *argv[])
     //open_file(argv[1]);
     
     op_mode testmode;
-    uint32_t cpsr_test = 0x2F;
+    uint32_t cpsr_test = 0x1F;
     current_operation_mode(cpsr_test, testmode);
 
     cout << testmode << endl;
-    cout << "Hello World" << endl;
     return 0;
 }
