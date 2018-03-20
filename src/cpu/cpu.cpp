@@ -10,10 +10,9 @@ void intial_regs()
     regs.sp_r13_regs[4] = 0x03007FA0; //IRQ SP init
 }
 
-void current_operation_mode(uint32_t cpsr)
+void current_operation_mode(uint32_t cpsr, op_mode mode)
 {
     uint32_t mode_bits;
-    char mode;
     mode_bits = extract_last_bits(cpsr, mode_bits, 5);
     switch(mode_bits) {
         case 0b10000: 

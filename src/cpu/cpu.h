@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "../utils.cpp"
+#include "../utils.h"
 
 /* 
 31 total registers, 32-bit.
@@ -39,5 +39,5 @@ enum op_mode
     Input: CPSR 
     Output: Nothing
  */
-void current_operation_mode(uint32_t cpsr);
+void current_operation_mode(uint32_t cpsr, op_mode mode);
 
