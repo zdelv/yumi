@@ -10,10 +10,11 @@ void intial_regs()
     regs.sp_r13_regs[4] = 0x03007FA0; //IRQ SP init
 }
 
-void current_operation_mode(uint32_t cpsr, op_mode mode)
+void current_operation_mode(uint32_t cpsr, op_mode output_mode)
 {
     uint32_t mode_bits;
     mode_bits = extract_last_bits(cpsr, mode_bits, 5);
+    op_mode mode = output_mode;
     switch(mode_bits) {
         case 0b10000: 
             mode = user;
@@ -37,7 +38,7 @@ void current_operation_mode(uint32_t cpsr, op_mode mode)
             mode = sys;
             break;
         default:
-            std::cout << "Incorrect value" << std::endl;
+            std::cout << "Invalid operation mode" << std::endl;
             break;
     };
 }

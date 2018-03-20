@@ -39,5 +39,5 @@ enum op_mode
     Input: CPSR 
     Output: Nothing
  */
-void current_operation_mode(uint32_t cpsr, op_mode mode);
+void current_operation_mode(uint32_t cpsr, op_mode output_mode);
 
