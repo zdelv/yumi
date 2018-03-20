@@ -3,6 +3,7 @@
 #include <vector>
 #include "cpu/cpu.h"
 
+
 using namespace std;
 
 void game_title(char *title)
@@ -26,7 +27,12 @@ int main(int argc, char *argv[])
     game_title(argv[1]);
     vector<char> file_buf;
     //open_file(argv[1]);
-    uint32_t test = 0x2F;
+    
+    op_mode testmode;
+    uint32_t cpsr_test = 0x2F;
+    current_operation_mode(cpsr_test, testmode);
+
+    cout << testmode << endl;
     cout << "Hello World" << endl;
     return 0;
 }
