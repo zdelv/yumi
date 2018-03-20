@@ -4,3 +4,5 @@ settings.json
 *.exe
 *.out
 .vscode
+*.o
+*.obj
