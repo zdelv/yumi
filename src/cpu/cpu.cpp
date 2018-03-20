@@ -1,15 +1,14 @@
 #include <iostream>
 #include "cpu.h"
 
-struct cpu regs; //Initialize CPU registers with struct cpu
-
-void intial_regs()
+/*
+void cpu::initial_regs()
 {
-    regs.sp_r13_regs[0] = 0x03007F00; //System & User SP init
-    regs.sp_r13_regs[2] = 0x03007FE0; //Supervisor SP init
-    regs.sp_r13_regs[4] = 0x03007FA0; //IRQ SP init
+    cpu::regs.sp_r13_regs[0] = 0x03007F00; //System & User SP init
+    cpu::regs.sp_r13_regs[2] = 0x03007FE0; //Supervisor SP init
+    cpu::regs.sp_r13_regs[4] = 0x03007FA0; //IRQ SP init
 }
-
+*/
 void cpu::current_operation_mode(uint32_t cpsr, op_mode& output_mode)
 {
     uint32_t mode_bits;
