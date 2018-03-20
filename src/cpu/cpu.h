@@ -13,23 +13,9 @@ FIQ may be unused; IRQs are used instead
 class cpu
 {
   public:
-    enum op_mode
-    {
-        user,
-        fiq,
-        irq,
-        super,
-        abrt,
-        und,
-        sys
-    };
-
-    /*  Runs through the current operation mode on the CPSR
-        Input: CPSR 
-        Output: Nothing
-         */
-    void current_operation_mode(uint32_t cpsr, op_mode &output);
-    struct
+    enum om { user, fiq, irq, super, abrt, und, sys } op_mode;
+    void current_operation_mode(uint32_t cpsr, om &op_mode);
+    class regs
     {
         uint32_t gen_regs[13]; //r0-r12 -- Thumb uses only r0-r7
         uint32_t fiq_regs[5];  //r8-r12 -- FIQ banked registers -- ARM-state only
@@ -41,6 +27,7 @@ class cpu
         uint32_t cpsr;         //Current Program Status Register (Status Bits)
         uint32_t spsr_regs[5]; //Saved Program Status Register --  [0]FIQ,[1]Supervisor,[2]Abort,[3]IRQ,[4]Undefined
     };
+    void init_regs();
 
   private:
 };
