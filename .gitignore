@@ -3,3 +3,4 @@ EmeraldHex
 settings.json
 *.exe
 *.out
+.vscode
