@@ -26,4 +26,3 @@ namespace Log {
         printf("'%s': %s\n", out, error);
     };   
 }
-

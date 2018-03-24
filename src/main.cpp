@@ -28,6 +28,6 @@ int main(int argc, char *argv[])
     std::vector<char> file_buf;
     //open_file(argv[1]);
     std::cout << "Hello World" << std::endl;
-    Log::LogMessage(log_level, error);
+    LOG(log_level, error);
     return 0;
     }
