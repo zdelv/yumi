@@ -14,7 +14,7 @@ class cpu
 {
   public:
     enum om { user, fiq, irq, super, abrt, und, sys } op_mode;
-    void current_operation_mode(uint32_t cpsr, om &op_mode);
+    void current_op_mode(uint32_t cpsr, om &op_mode);
     class regs
     {
         uint32_t gen_regs[13]; //r0-r12 -- Thumb uses only r0-r7
