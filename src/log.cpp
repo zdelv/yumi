@@ -3,7 +3,7 @@
 
 namespace Log {
 
-    void LogMessage(Level log_level, const char* error) {
+    void log_message(Level log_level, const char* error) {
         
         const char* out = 0;
 #define str(x) #x
