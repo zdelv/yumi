@@ -3,7 +3,7 @@
 
 namespace Log {
 
-    void log_message(Level log_level, const char* error) {
+    void log_message(Level log_level, const char* message) {
         
         const char* out = 0;
 #define str(x) #x
@@ -23,6 +23,6 @@ namespace Log {
 
 #undef LOG_PROCESS
 #undef str
-        printf("'%s': %s\n", out, error);
+        printf("'%s': %s\n", out, message);
     };   
 }
