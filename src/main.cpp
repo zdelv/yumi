@@ -1,8 +1,7 @@
 #include <fstream>
 #include <vector>
-#include "gba/cpu/cpu.h"
 #include "log.h"
-#include "gba/loader/load.h"
+#include "gba/gba.h"
 
 void game_title(char *title)
 {
@@ -11,15 +10,13 @@ void game_title(char *title)
 
 int main(int argc, char *argv[])
 {
-    Log::Level log_level = Log::Level::debug;
-    const char error[] = "This is an error"; 
     game_title(argv[1]);
-    std::vector<char> buf = Load::create_file_buffer(argv[1]);    
-    for (int i = 0; i < 500; i++)
-    {
-        std::cout << buf[i];
-    }
+    
+    std::vector<char> output(500);
+
     std::cout << "Hello World" << std::endl;
-    LOG(log_level, error);
+    GBA::Loader loadertest;
+    loadertest.create_file_buffer(argv[1]);    
+    loadertest.read_buffer(500, 0, output);    
     return 0;
 }
