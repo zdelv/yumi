@@ -1,6 +1,6 @@
 #include <fstream>
 #include <vector>
-#include "cpu/cpu.h"
+#include "gba/cpu/cpu.h"
 #include "log.h"
 #include "loader/load.h"
 
