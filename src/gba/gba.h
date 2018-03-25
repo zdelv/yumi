@@ -1,8 +1,8 @@
 #include "cpu/cpu.h"
 #include "loader/load.h"
 
-// Highest level class
-// Manages all of the subclasses and provides a small interface to initialize the GBA
+// Highest level namespace
+// Manages most of the subclasses and provides a small interface to initialize the GBA
 //
 namespace GBA
 {
