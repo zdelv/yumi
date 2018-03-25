@@ -1,4 +1,3 @@
-
-class GBA {
-    //TODO
+namespace GBA {
+    class CPU;
 };
