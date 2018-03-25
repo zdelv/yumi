@@ -1,4 +1,4 @@
 
 class GBA {
     //TODO
-}
+};
