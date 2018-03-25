@@ -10,8 +10,8 @@ VPATH = bin:src:src/gba:src/gba/cpu:src/gba/loader
 %.o : %.cpp | bin/
 		$(CXX) -c -std=c++11 -o bin/$@ $<
 
-main: $(PROGS) $(SRC)main.cpp | bin/
-		$(CXX) -std=c++11 -o bin/main $(DIRPROGS) $(SRC)main.cpp
+yumi: $(PROGS) $(SRC)yumi.cpp | bin/
+		$(CXX) -std=c++11 -o bin/yumi $(DIRPROGS) $(SRC)yumi.cpp
 
 clean: 
 		rm -rf *.o *.obj *.exe $(PROGS) bin/
