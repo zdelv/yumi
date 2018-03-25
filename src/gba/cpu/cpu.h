@@ -11,9 +11,13 @@ Thumb Link Register (LR) maps onto ARM r14
 Thumb Program Counter (PC) maps onto ARM PC r15
 FIQ may be unused; IRQs are used instead
  */
-class CPU : public GBA
+namespace GBA {
+
+class CPU
 {
   public:
+    virtual void run(); //TODO -- Generic run statement that means nothing
+    
     enum om { user, fiq, irq, super, abrt, und, sys } op_mode; //TODO -- Remove declaration of op_mode?
     void current_op_mode(uint32_t cpsr, om &op_mode);
 
@@ -37,3 +41,5 @@ class CPU : public GBA
         void init_regs(); //TODO -- Constructor for regs
     };
 };
+
+} //namespace GBA
