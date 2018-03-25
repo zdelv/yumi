@@ -5,7 +5,7 @@ LDR = src/loader/
 OARGS = -c -std=c++11 -o bin/
 PROGS = utils.o cpu.o log.o rom_load.o gba.o
 DIRPROGS = bin/utils.o bin/cpu.o bin/log.o bin/rom_load.o bin/gba.o
-VPATH = bin:src:src/gba:src/gba/cpu:src/loader
+VPATH = bin:src:src/gba:src/gba/cpu:src/gba/loader
 
 %.o : %.cpp | bin/
 		$(CXX) -c -std=c++11 -o bin/$@ $<

@@ -2,7 +2,7 @@
 #include <vector>
 #include "gba/cpu/cpu.h"
 #include "log.h"
-#include "loader/load.h"
+#include "gba/loader/load.h"
 
 void game_title(char *title)
 {
