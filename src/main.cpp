@@ -22,4 +22,4 @@ int main(int argc, char *argv[])
     std::cout << "Hello World" << std::endl;
     LOG(log_level, error);
     return 0;
-    }
+}
