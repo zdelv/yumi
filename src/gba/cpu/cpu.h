@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "../../utils.h"
-#include "../gba.h"
+
+namespace GBA {
 
 /* 
 31 total registers, 32-bit.
@@ -11,7 +12,6 @@ Thumb Link Register (LR) maps onto ARM r14
 Thumb Program Counter (PC) maps onto ARM PC r15
 FIQ may be unused; IRQs are used instead
  */
-namespace GBA {
 
 class CPU
 {
