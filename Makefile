@@ -1,16 +1,21 @@
 CXX = g++
 SRC = src/
 CPU = src/cpu/
-PROGS = utils.o cpu.o log.o
+LDR = src/loader/
+OARGS = -c -std=c++11
+PROGS = utils.o cpu.o log.o rom_load.o
+
+rom_load.o: $(LDR)rom_load.cpp $(LDR)load.h
+		$(CXX) $(OARGS) $(LDR)rom_load.cpp
 
 log.o: $(SRC)log.cpp $(SRC)log.h
-		$(CXX) -c -std=c++11 $(SRC)log.cpp
+		$(CXX) $(OARGS) $(SRC)log.cpp
 
 utils.o: $(SRC)utils.cpp $(SRC)utils.h
-		$(CXX) -c -std=c++11 $(SRC)utils.cpp
+		$(CXX) $(OARGS) $(SRC)utils.cpp
 
 cpu.o: $(CPU)cpu.cpp $(CPU)cpu.h
-		$(CXX) -c -std=c++11 $(CPU)cpu.cpp
+		$(CXX) $(OARGS) $(CPU)cpu.cpp
 
 main: $(PROGS) $(SRC)main.cpp
 		$(CXX) -std=c++11 -o main $(PROGS) $(SRC)main.cpp
