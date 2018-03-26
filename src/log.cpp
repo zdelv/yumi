@@ -6,7 +6,6 @@ namespace Log {
     void log_message(Level log_level, const char* message) {
         
         const char* out = 0;
-#define str(x) #x
 #define LOG_PROCESS(l) case(l): out = #l; break;
 
         switch(log_level) {
@@ -22,7 +21,5 @@ namespace Log {
         }
 
 #undef LOG_PROCESS
-#undef str
-        printf("'%s': %s\n", out, message);
     };   
 }
