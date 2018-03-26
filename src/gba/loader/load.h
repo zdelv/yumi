@@ -3,6 +3,8 @@
 
 namespace GBA {
 
+//Loading files for later use
+//Mostly just creates and reads from a private vector buffer
 class Loader
 {
 
