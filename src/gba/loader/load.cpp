@@ -18,6 +18,7 @@ void Loader::read_buffer(int bytes, uint32_t iterator_start, std::vector<char> &
     if (Loader::file_buf.empty())
     {
         LOG(Log::Level::error, "File Buffer not initialized! Run create_file_buffer first!");
+        return;
     }
     else
     {
