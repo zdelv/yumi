@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include "../../utils.h"
 
-namespace GBA {
 
 /* 
 31 total registers, 32-bit.
@@ -34,6 +33,4 @@ namespace CPU
 
     void current_op_mode(uint32_t cpsr, om &op_mode);
 
-};
-
-} //namespace GBA
+}

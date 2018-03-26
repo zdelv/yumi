@@ -1,7 +1,6 @@
 #include <fstream>
 #include <vector>
 
-namespace GBA {
 
 //Loading files for later use
 //Mostly just creates and reads from a private vector buffer
@@ -25,5 +24,3 @@ class Loader
     //Made of 1 byte chars
     std::vector<char> file_buf;
 };
-
-} //namespace GBA

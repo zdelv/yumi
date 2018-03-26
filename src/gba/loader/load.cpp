@@ -1,7 +1,6 @@
 #include "../../log.h"
 #include "load.h"
 
-namespace GBA {
 
 void Loader::create_file_buffer(char *path)
 {
@@ -28,5 +27,3 @@ void Loader::read_buffer(int bytes, uint32_t iterator_start, std::vector<char> &
         };
     }
 }
-
-} //namespace GBA

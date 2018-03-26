@@ -1,7 +1,6 @@
 #include <iostream>
 #include "cpu.h"
 
-namespace GBA {
 
 /*
 void cpu::initial_regs()
@@ -42,5 +41,3 @@ void CPU::current_op_mode(uint32_t cpsr, om& output_mode)
             break;
     }
 }
-
-} //namespace GBA
