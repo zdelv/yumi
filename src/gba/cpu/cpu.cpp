@@ -1,7 +1,6 @@
 #include <iostream>
 #include "cpu.h"
 
-namespace GBA {
 
 /*
 void cpu::initial_regs()
@@ -13,8 +12,7 @@ void cpu::initial_regs()
 */
 void CPU::current_op_mode(uint32_t cpsr, om& output_mode)
 {
-    uint32_t mode_bits;
-    mode_bits = extract_last_bits(cpsr, mode_bits, 5);
+    uint32_t mode_bits = extract_last_bits(cpsr, mode_bits, 5);
 
     switch(mode_bits) {
         case 0b10000: 
@@ -43,5 +41,3 @@ void CPU::current_op_mode(uint32_t cpsr, om& output_mode)
             break;
     }
 }
-
-} //namespace GBA

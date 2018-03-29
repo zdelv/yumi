@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include "../../utils.h"
 
-namespace GBA {
 
 /* 
 31 total registers, 32-bit.
@@ -13,20 +12,9 @@ Thumb Program Counter (PC) maps onto ARM PC r15
 FIQ may be unused; IRQs are used instead
  */
 
-class CPU
+namespace CPU
 {
-  public:
-    virtual void run(); //TODO -- Generic run statement that means nothing
-    
-    enum om { user, fiq, irq, super, abrt, und, sys } op_mode; //TODO -- Remove declaration of op_mode?
-    void current_op_mode(uint32_t cpsr, om &op_mode);
-
-    struct timings {
-        //TODO
-    };
-
-  private:
-    struct regs
+    struct Regs
     {
         uint32_t gen_regs[13]; //r0-r12 -- Thumb uses only r0-r7
         uint32_t fiq_regs[5];  //r8-r12 -- FIQ banked registers -- ARM-state only
@@ -40,6 +28,9 @@ class CPU
         
         void init_regs(); //TODO -- Constructor for regs
     };
-};
+     
+    enum om { user, fiq, irq, super, abrt, und, sys } op_mode; //TODO -- Remove declaration of op_mode?
 
-} //namespace GBA
+    void current_op_mode(uint32_t cpsr, om &op_mode);
+
+}
