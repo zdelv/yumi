@@ -6,7 +6,7 @@ namespace Log {
     template<typename... Args>
     void log_message(Level log_level, const char* message, Args... args) {
         
-        const char* out = 0;
+        const char* out = nullptr;
 #define LOG_PROCESS(l) case(l): out = #l; break;
 
         switch(log_level) {
