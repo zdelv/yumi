@@ -11,12 +11,12 @@ void Loader::create_file_buffer(char *path)
     Loader::file_buf.assign((std::istreambuf_iterator<char>(file)), (std::istreambuf_iterator<char>()));
 }
 
-//template<class T, size_t N
+//template<class T, size_t N>
 void Loader::read_buffer(int bytes, uint32_t iterator_start, std::vector<char> &output)
 {
     if (Loader::file_buf.empty())
     {
-        LOG(Log::Level::error, "File Buffer not initialized! Run create_file_buffer first!");
+        LOG(Log::Level::error, "File Buffer not initialized! Run create_file_buffer first!", 0);
         return;
     }
     else
