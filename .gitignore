@@ -9,3 +9,6 @@ settings.json
 main
 *Emerald*
 *emerald*
+bin/
+Session*
+*undo*
