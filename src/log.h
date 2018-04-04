@@ -11,5 +11,5 @@ namespace Log {
     
 } // namespace log
 
-#define LOG(log_level, message) \
-    Log::log_message(log_level, message)
+#define LOG(log_level, message, ...) \
+    Log::log_message(log_level, message, __VA_ARGS__)
