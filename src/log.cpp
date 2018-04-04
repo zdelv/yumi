@@ -3,7 +3,8 @@
 
 namespace Log {
 
-    void log_message(Level log_level, const char* message) {
+    template<typename... Args>
+    void log_message(Level log_level, const char* message, Args... args) {
         
         const char* out = 0;
 #define LOG_PROCESS(l) case(l): out = #l; break;
@@ -20,6 +21,19 @@ namespace Log {
                 break;
         }
 
+        ((std::cout << out << ": " << message) << ... << args);
+
 #undef LOG_PROCESS
     };   
+#define LOGVARS Level, const char* 
+
+template void log_message<int>(LOGVARS, int);
+template void log_message<int, int>(LOGVARS, int, int);
+template void log_message<const char*>(LOGVARS, const char*);
+template void log_message<const char*, const char*>(LOGVARS, const char*, const char*);
+template void log_message<const char*, int>(LOGVARS, const char*, int);
+template void log_message<int, const char*>(LOGVARS, int, const char*);
+
+
 }
+

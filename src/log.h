@@ -6,7 +6,8 @@ namespace Log {
 
     enum class Level : uint8_t { trace, debug, info, warning, error, critical };
 
-    void log_message(Level log_level, const char* message); //TODO -- Add error types or error locations
+    template<typename... Args>
+    void log_message(Level log_level, const char* message, Args... args); //TODO -- Add error types or error locations
     
 } // namespace log
 
