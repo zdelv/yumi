@@ -25,6 +25,11 @@ namespace Log {
 
 #undef LOG_PROCESS
     };   
+
+
+//Creates templates for all of the current ways the log function is used.
+//To add more, put the variadic args in the <> and ALL arguments, in order,
+//in the ()
 #define LOGVARS Level, const char* 
 
 template void log_message<int>(LOGVARS, int);
