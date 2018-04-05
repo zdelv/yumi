@@ -1,5 +1,5 @@
-#include "../../log.h"
-#include "load.h"
+#include "../../log.hpp"
+#include "load.hpp"
 
 
 void Loader::create_file_buffer(char *path)

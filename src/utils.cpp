@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "utils.hpp"
 
 uint32_t extract_last_bits(uint32_t bits, int num_of_bits)
 {

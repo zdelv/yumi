@@ -1,7 +1,7 @@
 #include <fstream>
 #include <vector>
-#include "log.h"
-#include "yumi/loader/load.h"
+#include "log.hpp"
+#include "yumi/loader/load.hpp"
 
 void game_title(char *title)
 {
