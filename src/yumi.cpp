@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     game_title(argv[1]);
     
-    std::vector<char> output(500);
+    std::vector<u8> output(500);
 
     std::cout << "Hello World" << std::endl;
     Loader loadertest;

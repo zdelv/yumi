@@ -1,13 +1,23 @@
+#include "../types.hpp"
+#include <vector>
 
 class Memory {
 
     public:
 
         //TODO - Maybe make a class/struct for returned data
-        char get_memory();
+        //Gets the data at the given address
+        //@input: uint32_t address
+        //@output: uint8_t data
+        u8 get_memory(u32 address);
 
-        void set_memory();
+
+        //Sets the data at the given address
+        //@input: uint32_t address, uint8_t data
+        //@output: none
+        void set_memory(u32 address, u8 data);
 
     private:
 
+        std::vector<u8> memory_map;
 };

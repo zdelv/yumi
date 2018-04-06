@@ -2,7 +2,7 @@
 #include "load.hpp"
 
 
-void Loader::create_file_buffer(char *path)
+void Loader::create_file_buffer(const char* path)
 {
     std::ifstream file(path, std::ios::binary);
     file.unsetf(std::ios::skipws); //Removes skips on \n
@@ -12,7 +12,7 @@ void Loader::create_file_buffer(char *path)
 }
 
 //template<class T, size_t N>
-void Loader::read_buffer(int bytes, uint32_t iterator_start, std::vector<char> &output)
+void Loader::read_buffer(int bytes, u32 iterator_start, std::vector<u8> &output)
 {
     if (Loader::file_buf.empty())
     {

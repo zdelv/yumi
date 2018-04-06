@@ -1,14 +1,14 @@
-#include <stdint.h>
+#include "types.hpp"
 #include <iostream>
 #include <string>
 
 namespace Log {
 
-    enum class Level : uint8_t { trace, debug, info, warning, error, critical };
+    enum class Level : u8 { trace, debug, info, warning, error, critical };
 
     template<typename... Args>
     void log_message(Level log_level, const char* message, Args... args); //TODO -- Add error types or error locations
-    
+
 } // namespace log
 
 #define LOG(log_level, message, ...) \
