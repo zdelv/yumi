@@ -11,25 +11,32 @@ Thumb Program Counter (PC) maps onto ARM PC r15
 FIQ may be unused; IRQs are used instead
  */
 
-namespace CPU
+namespace CPU {
+struct Regs
 {
-    struct Regs
-    {
-        u32 gen_regs[13]; //r0-r12 -- Thumb uses only r0-r7
-        u32 fiq_regs[5];  //r8-r12 -- FIQ banked registers -- ARM-state only
+    u32 gen_regs[13]; //r0-r12 -- Thumb uses only r0-r7
+    u32 fiq_regs[5]; //r8-r12 -- FIQ banked registers -- ARM-state only
 
-        u32 sp_r13_regs[6]; //Stack Pointer -- [0]Sys+User,[1]FIQ,[2]Supervisor,[3]Abort,[4]IRQ,[5]Undefined
-        u32 lr_r14_regs[6]; //Link Register -- [0]Sys+User,[1]FIQ,[2]Supervisor,[3]Abort,[4]IRQ,[5]Undefined
-        u32 pc_r15;         //Program Counter //TODO - Pipelining is 2 instr. ahead, probably important
+    u32 sp_r13_regs[6]; //Stack Pointer -- [0]Sys+User,[1]FIQ,[2]Supervisor,[3]Abort,[4]IRQ,[5]Undefined
+    u32 lr_r14_regs[6]; //Link Register -- [0]Sys+User,[1]FIQ,[2]Supervisor,[3]Abort,[4]IRQ,[5]Undefined
+    u32 pc_r15; //Program Counter //TODO - Pipelining is 2 instr. ahead, probably important
 
-        u32 cpsr;         //Current Program Status Register (Status Bits)
-        u32 spsr_regs[5]; //Saved Program Status Register --  [0]FIQ,[1]Supervisor,[2]Abort,[3]IRQ,[4]Undefined
-        
-        void init_regs(); //TODO -- Constructor for regs
-    };
-     
-    enum om { user, fiq, irq, super, abrt, und, sys } op_mode; //TODO -- Remove declaration of op_mode?
+    u32 cpsr; //Current Program Status Register (Status Bits)
+    u32 spsr_regs[5]; //Saved Program Status Register --  [0]FIQ,[1]Supervisor,[2]Abort,[3]IRQ,[4]Undefined
 
-    void current_op_mode(u32 cpsr, om &op_mode);
+    void init_regs(); //TODO -- Constructor for regs
+};
 
+enum om
+{
+    user,
+    fiq,
+    irq,
+    super,
+    abrt,
+    und,
+    sys
+} op_mode; //TODO -- Remove declaration of op_mode?
+
+void current_op_mode(u32 cpsr, om& op_mode);
 }
